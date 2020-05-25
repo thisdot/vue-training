@@ -1,15 +1,15 @@
 <template>
-  <div class="dashboard">
+  <Authenticated>
     <h2>Dashboard default</h2>
     <router-view />
-  </div>
+  </Authenticated>
 </template>
 
 <script>
 // @ is an alias to /src
-
+import Authenticated from "@/layouts/Authenticated";
 export default {
   nam: "Dashboard",
-  compnents: {},
+  components: { Authenticated }
 };
 </script>

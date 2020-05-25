@@ -7,6 +7,6 @@
 <script>
 export default {
   name: "Article",
-  components: {},
+  components: {}
 };
 </script>
