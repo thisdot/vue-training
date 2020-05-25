@@ -1,12 +1,12 @@
 <template>
-  <div class="about">
-    This is an about page
+  <div class="Default">
+    <h2>Default</h2>
   </div>
 </template>
 
 <script>
 export default {
-  nae: "About",
+  name: "Default",
   components: {},
 };
 </script>

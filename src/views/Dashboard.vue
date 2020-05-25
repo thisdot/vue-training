@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <h1>Home</h1>
+  <div class="dashboard">
+    <h2>Dashboard default</h2>
     <router-view />
   </div>
 </template>
@@ -9,7 +9,7 @@
 // @ is an alias to /src
 
 export default {
-  name: "Home",
-  components: {},
+  nam: "Dashboard",
+  compnents: {},
 };
 </script>
