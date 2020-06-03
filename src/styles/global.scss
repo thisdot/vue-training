@@ -1,7 +1,8 @@
-@import "setup/variables.scss";
-@import "setup/base";
+@import "setup/normalize.scss";
 @import "setup/typography.scss";
+@import "setup/variables.scss";
 @import "setup/mixins.scss";
 
+@import "basics/base.scss";
 @import "basics/links.scss";
 @import "basics/buttons.scss";

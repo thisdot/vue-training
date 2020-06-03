@@ -8,20 +8,6 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
-<<<<<<< HEAD
-=======
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,vue}": [
-      "eslint --fix",
-      "prettier-eslint --write"
-    ]
-  },
->>>>>>> Add husky
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
@@ -57,7 +43,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,vue}": [
-      "eslint . --fix"
+      "eslint . --fix",
+      "git add"
     ]
   }
 }
