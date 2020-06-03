@@ -1,40 +1,39 @@
 <template>
-  <div class="static">
-    <Master>
-      <template #header>
-        <div class="container static__header">
-          <h1>{{ pageTitle }}</h1>
-        </div>
-      </template>
-      <slot />
-      <template #footer>
-        <slot name="footer" />
-      </template>
-    </Master>
+  <div id="layout1">
+    <h1>{{ title }}</h1>
+    <slot />
   </div>
 </template>
 
 <script>
-import Master from '@/layouts/Master';
-
 export default {
-  name: 'Static',
-  components: {
-    Master,
-  },
   props: {
-    pageTitle: {
-      type: String,
-      default: 'Static Layout',
-    },
-  },
+    title: {
+      required: true,
+      type: String
+    }
+  }
 };
 </script>
 
-<style lang="scss" scoped>
-.static {
-  &__header {
-    @include flex(row, nowrap, center, center);
+<style lang="scss">
+#layout1 {
+  max-width: 800px;
+  min-height: 500px;
+  padding: 24px;
+  margin: 80px auto;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 1px 1px grey;
+
+  h1 {
+    display: block;
+    background: black;
+    color: white;
+    margin: -24px -24px 24px -24px;
+    padding: 24px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
 }
 </style>

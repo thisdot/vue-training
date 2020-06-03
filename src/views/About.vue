@@ -1,12 +1,12 @@
 <template>
-  <div class="about">
-    This is an about page
-  </div>
+  <Static title="About">This is an about page</Static>
 </template>
 
 <script>
+import Static from "@/layouts/Static";
+
 export default {
-  nae: 'About',
-  components: {},
+  name: "About",
+  components: { Static }
 };
 </script>
