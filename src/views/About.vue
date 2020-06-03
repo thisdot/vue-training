@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  nae: "About",
+  nae: 'About',
   components: {},
 };
 </script>

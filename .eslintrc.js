@@ -8,6 +8,16 @@ module.exports = {
     parser: "babel-eslint"
   },
   rules: {
+    "prettier/prettier": [
+      "warn",
+      {
+        "#": "prettier config in here :)",
+        "singleQuote": true,
+        "semi": true,
+        "trailingComma": "all",
+        "indent": ["error", "tab"]
+      }
+    ],
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off"
   },

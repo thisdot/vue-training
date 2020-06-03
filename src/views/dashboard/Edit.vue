@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Edit",
+  name: 'Edit',
   components: {},
 };
 </script>

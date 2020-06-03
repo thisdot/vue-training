@@ -6,8 +6,7 @@
 
 <script>
 export default {
-  name: "Default",
+  name: 'Default',
   components: {},
 };
 </script>
-w
