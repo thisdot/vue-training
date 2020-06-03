@@ -2,6 +2,9 @@
   <Static page-title="Home">
     <router-view />
     <router-link to="/dashboard">Login</router-link>
+    <template #footer>
+      <p>© 2020 This Dot. All Rights Reserved.</p>
+    </template>
   </Static>
 </template>
 

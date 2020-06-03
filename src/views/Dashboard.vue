@@ -1,6 +1,9 @@
 <template>
   <Authenticated page-sub-title="Dashboard">
     <router-view />
+    <template #footer>
+      <p>© 2020 This Dot. All Rights Reserved.</p>
+    </template>
   </Authenticated>
 </template>
 

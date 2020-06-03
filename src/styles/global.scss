@@ -1,5 +1,7 @@
 @import "setup/variables.scss";
-@import "setup/base";
+@import "basics/colors.scss";
+
+@import "setup/base.scss";
 @import "setup/typography.scss";
 @import "setup/mixins.scss";
 

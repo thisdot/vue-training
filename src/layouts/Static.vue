@@ -1,20 +1,27 @@
 <template>
   <div class="static">
-    <header class="static__header">
-      <div class="container">
-        <h1>{{ pageTitle }}</h1>
-      </div>
-    </header>
-
-    <section class="container static__content">
+    <Master>
+      <template #header>
+        <div class="container static__header">
+          <h1>{{ pageTitle }}</h1>
+        </div>
+      </template>
       <slot />
-    </section>
+      <template #footer>
+        <slot name="footer" />
+      </template>
+    </Master>
   </div>
 </template>
 
 <script>
+import Master from '@/layouts/Master';
+
 export default {
   name: 'Static',
+  components: {
+    Master,
+  },
   props: {
     pageTitle: {
       type: String,
@@ -26,26 +33,8 @@ export default {
 
 <style lang="scss" scoped>
 .static {
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: stretch;
-
   &__header {
-    background-color: #23424a;
-    color: #fff;
-    padding: 0.5rem 0;
-    text-align: center;
-  }
-
-  &__content {
-    height: 100%;
-    padding-top: 20px;
-    background: $color7;
-    overflow-y: auto;
+    @include flex(row, nowrap, center, center);
   }
 }
 </style>

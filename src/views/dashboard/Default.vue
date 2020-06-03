@@ -1,5 +1,5 @@
 <template>
-  <div class="Default">
+  <div class="default">
     <h3>Default</h3>
   </div>
 </template>
