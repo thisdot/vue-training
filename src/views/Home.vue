@@ -1,6 +1,5 @@
 <template>
-  <Static>
-    <h1>Home</h1>
+  <Static page-title="Home">
     <router-view />
     <router-link to="/dashboard">Login</router-link>
   </Static>
@@ -8,10 +7,10 @@
 
 <script>
 // @ is an alias to /src
-import Static from "@/layouts/Static";
+import Static from '@/layouts/Static';
 
 export default {
-  name: "Home",
-  components: { Static }
+  name: 'Home',
+  components: { Static },
 };
 </script>
