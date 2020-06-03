@@ -1,11 +1,14 @@
-a {
+.link {
   color: $primary;
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
-  padding: 0 10px;
 
   &.router-link-exact-active {
     color: $secondary;
+  }
+
+  &--light {
+    color: $color7;
   }
 }

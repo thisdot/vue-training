@@ -27,3 +27,9 @@ img {
   max-width: 800px;
   margin: 0 auto;
 }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}

@@ -2,7 +2,7 @@
   <div class="static">
     <Master>
       <template #header>
-        <div class="container">
+        <div class="container static__header">
           <h1>{{ pageTitle }}</h1>
         </div>
       </template>
@@ -30,3 +30,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.static {
+  &__header {
+    @include flex(row, nowrap, center, center);
+  }
+}
+</style>

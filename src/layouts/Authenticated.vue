@@ -2,19 +2,26 @@
   <div class="authenticated">
     <Master>
       <template #header>
-        <nav>
-          <router-link to="/">Logout</router-link>|
-          <router-link to="/dashboard/">Dashboard</router-link>|
-          <router-link to="/dashboard/article">Post</router-link>|
-          <router-link to="/dashboard/edit">Edit</router-link>
-        </nav>
+        <div class="container row authenticated__header">
+          <a href="#">
+            <img
+              class="authenticated__logo"
+              src="https://placeholder.pics/svg/140x50"
+              alt=""
+            />
+          </a>
+          <nav class="row authenticated__nav">
+            <router-link class="link link--light" to="/">Logout</router-link>
+            <!--            <router-link class="link link&#45;&#45;light" to="/dashboard/">Dashboard</router-link>-->
+            <!--            <router-link class="link link&#45;&#45;light" to="/dashboard/article">Post</router-link>-->
+            <!--            <router-link class="link link&#45;&#45;light" to="/dashboard/edit">Edit</router-link>-->
+          </nav>
+        </div>
       </template>
-      <section class="authenticated__body">
-        <slot />
-        <footer>
-          <slot name="footer" />
-        </footer>
-      </section>
+      <slot />
+      <template #footer>
+        <slot name="footer" />
+      </template>
     </Master>
   </div>
 </template>
@@ -38,20 +45,22 @@ export default {
 
 <style lang="scss" scoped>
 .authenticated {
-  &__body {
-    @include flex(column, nowrap, space-between, stretch);
+  a {
+    display: inline-block;
+  }
+
+  &__logo {
+    border-radius: 15px;
+    display: block;
+  }
+
+  &__nav {
+    padding: 10px 0;
+
+    a:not(:last-child)::after {
+      content: '|';
+      padding: 0 10px;
+    }
   }
 }
-/*nav {*/
-/*  padding: 30px;*/
-
-/*  a {*/
-/*    font-weight: bold;*/
-/*    color: #2c3e50;*/
-
-/*    &.router-link-exact-active {*/
-/*      color: #42b983;*/
-/*    }*/
-/*  }*/
-/*}*/
 </style>
