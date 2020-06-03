@@ -7,13 +7,13 @@
 
 <script>
 export default {
-    name: 'Static',
-    props: {
-        pageTitle: {
-            type: String,
-            default: 'Static Layout',
-        },
+  name: 'Static',
+  props: {
+    pageTitle: {
+      type: String,
+      default: 'Static Layout',
     },
+  },
 };
 </script>
 

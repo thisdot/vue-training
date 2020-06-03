@@ -10,4 +10,3 @@ export default {
   components: {},
 };
 </script>
-w
