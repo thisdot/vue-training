@@ -1,12 +1,20 @@
 <template>
   <div>
-    <h1>Static Layout</h1>
+    <h1>{{ pageTitle }}</h1>
     <slot />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+    name: 'Static',
+    props: {
+        pageTitle: {
+            type: String,
+            default: 'Static Layout',
+        },
+    },
+};
 </script>
 
 <style lang="scss">

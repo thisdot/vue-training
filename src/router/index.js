@@ -1,15 +1,13 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "@/views/Home.vue";
-const About = () => import(/* webpackChunkName: "about" */ "@/views/About.vue");
 
+import Home from "@/views/Home.vue";
 import Dashboard from "@/views/Dashboard.vue";
-const Article = () =>
-  import(/* webpackChunkName: "dashboard" */ "@/views/dashboard/Article.vue");
-const Default = () =>
-  import(/* webpackChunkName: "dashboard" */ "@/views/dashboard/Default.vue");
-const Edit = () =>
-  import(/* webpackChunkName: "dashboard" */ "@/views/dashboard/Edit.vue");
+
+const About = () => import(/* webpackChunkName: "about" */ "@/views/About.vue");
+const Article = () => import(/* webpackChunkName: "dashboard" */ "@/views/dashboard/Article.vue");
+const Default = () => import(/* webpackChunkName: "dashboard" */ "@/views/dashboard/Default.vue");
+const Edit = () => import(/* webpackChunkName: "dashboard" */ "@/views/dashboard/Edit.vue");
 
 Vue.use(VueRouter);
 
@@ -26,7 +24,7 @@ const routes = [
   },
   {
     path: "/dashboard",
-    name: "Dashboad",
+    name: "Dashboard",
     component: Dashboard,
     children: [
       {

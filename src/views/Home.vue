@@ -1,6 +1,5 @@
 <template>
-  <Static>
-    <h1>Home</h1>
+  <Static page-title="Home">
     <router-view />
     <router-link to="/dashboard">Login</router-link>
   </Static>

@@ -1,6 +1,6 @@
 <template>
   <div class="Default">
-    <h2>Default</h2>
+    <h3>Default</h3>
   </div>
 </template>
 
@@ -10,3 +10,4 @@ export default {
   components: {},
 };
 </script>
+w
