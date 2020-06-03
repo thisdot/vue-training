@@ -1,5 +1,6 @@
 <template>
-  <Authenticated page-sub-title="Dashboard">
+  <Authenticated page-sub-title="Dashboard"
+    >w
     <router-view />
   </Authenticated>
 </template>

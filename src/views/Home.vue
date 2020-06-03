@@ -2,6 +2,9 @@
   <Static page-title="Home">
     <router-view />
     <router-link to="/dashboard">Login</router-link>
+    <template #footer>
+      <p>Hello World!</p>
+    </template>
   </Static>
 </template>
 
