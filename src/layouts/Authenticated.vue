@@ -1,27 +1,18 @@
 <template>
-  <div class="authenticated">
-    <header class="authenticated__header">
-      <div class="container row">
-        <a href="#">
-          <img
-            class="authenticated__logo"
-            src="https://placeholder.pics/svg/140x50"
-            alt=""
-          />
-        </a>
-        <nav class="row authenticated__nav">
-          <router-link class="link link--light" to="/">Logout</router-link>
-        </nav>
-      </div>
-    </header>
-
-    <section class="container authenticated__body">
-      <slot />
-    </section>
-
-    <footer class="container authenticated__footer">
-      <p>© 2020 This Dot. All Rights Reserved.</p>
-    </footer>
+  <div id="layout2">
+    <div class="header">
+      <a href="#">
+        <img
+          class="authenticated__logo"
+          src="https://placeholder.pics/svg/140x50"
+          alt=""
+        />
+      </a>
+      <nav class="row authenticated__nav">
+        <router-link class="link link--light" to="/">Logout</router-link>
+      </nav>
+    </div>
+    <slot />
   </div>
 </template>
 
@@ -38,58 +29,26 @@ export default {
 </script>
 
 <style lang="scss">
-.authenticated {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+#layout2 {
+  max-width: 800px;
+  min-height: 500px;
+  padding: 24px;
+  margin: 80px auto;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 1px 1px grey;
 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: stretch;
+  .header {
+    background: black;
+    color: white;
+    margin: -24px -24px 24px -24px;
+    padding: 24px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 
-  a {
-    display: inline-block;
-  }
-
-  &__header {
-    background-color: $color1;
-    color: $color8;
-    padding: 1rem 0;
-    min-height: 90px;
-    width: 100%;
-    text-align: center;
-  }
-
-  &__logo {
-    border-radius: 15px;
-    display: block;
-  }
-
-  &__nav {
-    padding: 10px 0;
-
-    a:not(:last-child)::after {
-      content: '|';
-      padding: 0 10px;
-    }
-  }
-
-  &__body {
-    flex: 1;
-    padding: 20px;
-    background: $color7;
-    overflow-y: auto;
-  }
-
-  &__footer {
-    height: 40px;
-    padding: 10px 0;
-    text-align: center;
-    font-weight: bold;
-    font-size: 0.8rem;
-    background: $color7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 </style>
