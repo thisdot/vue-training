@@ -31,5 +31,6 @@ li {
   border: 1px solid $primary;
   border-radius: 5px;
   padding: 10px;
+  text-decoration: none;
 }
 </style>
