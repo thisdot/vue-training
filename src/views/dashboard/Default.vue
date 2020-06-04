@@ -11,7 +11,7 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi scelerisque
       ultricies consectetur. Maecenas mollis erat ac odio fermentum dapibus.
       Mauris vitae pulvinar eros. Vivamus scelerisque tortor lectus, at suscipit
-      lorem pulvinar id. Nulla semper, dolor at ultrices posuere, risus
+      lorem pulvinar id. Nulla semper, dolor at ultrices posuere, risus ...
     </p>
     <router-link to="#">Show Full Article</router-link>
   </div>
