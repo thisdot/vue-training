@@ -1,39 +1,33 @@
 <template>
   <div class="authenticated">
-    <Master>
-      <template #header>
-        <div class="container row authenticated__header">
-          <a href="#">
-            <img
-              class="authenticated__logo"
-              src="https://placeholder.pics/svg/140x50"
-              alt=""
-            />
-          </a>
-          <nav class="row authenticated__nav">
-            <router-link class="link link--light" to="/">Logout</router-link>
-            <!--            <router-link class="link link&#45;&#45;light" to="/dashboard/">Dashboard</router-link>-->
-            <!--            <router-link class="link link&#45;&#45;light" to="/dashboard/article">Post</router-link>-->
-            <!--            <router-link class="link link&#45;&#45;light" to="/dashboard/edit">Edit</router-link>-->
-          </nav>
-        </div>
-      </template>
+    <header class="authenticated__header">
+      <div class="container row">
+        <a href="#">
+          <img
+            class="authenticated__logo"
+            src="https://placeholder.pics/svg/140x50"
+            alt=""
+          />
+        </a>
+        <nav class="row authenticated__nav">
+          <router-link class="link link--light" to="/">Logout</router-link>
+        </nav>
+      </div>
+    </header>
+
+    <section class="container authenticated__body">
       <slot />
-      <template #footer>
-        <slot name="footer" />
-      </template>
-    </Master>
+    </section>
+
+    <footer class="container authenticated__footer">
+      <p>© 2020 This Dot. All Rights Reserved.</p>
+    </footer>
   </div>
 </template>
 
 <script>
-import Master from '@/layouts/Master';
-
 export default {
   name: 'Authenticated',
-  components: {
-    Master,
-  },
   props: {
     pageSubTitle: {
       type: String,
@@ -43,10 +37,29 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .authenticated {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+
   a {
     display: inline-block;
+  }
+
+  &__header {
+    background-color: $color1;
+    color: $color8;
+    padding: 1rem 0;
+    min-height: 90px;
+    width: 100%;
+    text-align: center;
   }
 
   &__logo {
@@ -61,6 +74,22 @@ export default {
       content: '|';
       padding: 0 10px;
     }
+  }
+
+  &__body {
+    flex: 1;
+    padding: 20px;
+    background: $color7;
+    overflow-y: auto;
+  }
+
+  &__footer {
+    height: 40px;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    background: $color7;
   }
 }
 </style>
