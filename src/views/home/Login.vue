@@ -26,12 +26,14 @@ export default {
     login() {
       if (!this.username) {
         alert('Username is required!');
+        return;
       }
 
       this.signing = true;
 
       setTimeout(() => {
         localStorage.setItem('username', this.username);
+
         this.signing = false;
 
         this.$router.push({ path: '/dashboard' });

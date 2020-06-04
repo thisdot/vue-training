@@ -1,7 +1,7 @@
 <template>
   <div id="layout2">
     <div class="header">
-      <a href="#">
+      <a href="/">
         <img
           class="authenticated__logo"
           src="https://placeholder.pics/svg/140x50"

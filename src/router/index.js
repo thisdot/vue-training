@@ -35,6 +35,14 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
+    beforeEnter(to, from, next) {
+      const loggedIn = localStorage.getItem('username');
+      if (!loggedIn) {
+        next({ name: 'Login' });
+      } else {
+        next();
+      }
+    },
     children: [
       {
         path: '',
