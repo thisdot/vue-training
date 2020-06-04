@@ -1,39 +1,24 @@
 <template>
-  <div class="authenticated">
-    <Master>
-      <template #header>
-        <div class="container row authenticated__header">
-          <a href="#">
-            <img
-              class="authenticated__logo"
-              src="https://placeholder.pics/svg/140x50"
-              alt=""
-            />
-          </a>
-          <nav class="row authenticated__nav">
-            <router-link class="link link--light" to="/">Logout</router-link>
-            <!--            <router-link class="link link&#45;&#45;light" to="/dashboard/">Dashboard</router-link>-->
-            <!--            <router-link class="link link&#45;&#45;light" to="/dashboard/article">Post</router-link>-->
-            <!--            <router-link class="link link&#45;&#45;light" to="/dashboard/edit">Edit</router-link>-->
-          </nav>
-        </div>
-      </template>
-      <slot />
-      <template #footer>
-        <slot name="footer" />
-      </template>
-    </Master>
+  <div id="layout2">
+    <div class="header">
+      <a href="#">
+        <img
+          class="authenticated__logo"
+          src="https://placeholder.pics/svg/140x50"
+          alt=""
+        />
+      </a>
+      <nav class="row authenticated__nav">
+        <router-link class="link link--light" to="/">Logout</router-link>
+      </nav>
+    </div>
+    <slot />
   </div>
 </template>
 
 <script>
-import Master from '@/layouts/Master';
-
 export default {
   name: 'Authenticated',
-  components: {
-    Master,
-  },
   props: {
     pageSubTitle: {
       type: String,
@@ -43,24 +28,27 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.authenticated {
-  a {
-    display: inline-block;
-  }
+<style lang="scss">
+#layout2 {
+  max-width: 800px;
+  min-height: 500px;
+  padding: 24px;
+  margin: 80px auto;
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 1px 1px grey;
 
-  &__logo {
-    border-radius: 15px;
-    display: block;
-  }
+  .header {
+    background: black;
+    color: white;
+    margin: -24px -24px 24px -24px;
+    padding: 24px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 
-  &__nav {
-    padding: 10px 0;
-
-    a:not(:last-child)::after {
-      content: '|';
-      padding: 0 10px;
-    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 </style>
