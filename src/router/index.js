@@ -30,6 +30,14 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login,
+    beforeEnter(to, from, next) {
+      const loggedIn = localStorage.getItem('username');
+      if (loggedIn) {
+        next({ name: '' });
+      } else {
+        next();
+      }
+    },
   },
   {
     path: '/dashboard',
