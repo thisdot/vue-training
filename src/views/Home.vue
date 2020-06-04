@@ -1,7 +1,7 @@
 <template>
   <Static title="Home">
     <p>Please login</p>
-    <router-link to="/dashboard">Login</router-link>
+    <router-link to="/login">Login</router-link>
   </Static>
 </template>
 

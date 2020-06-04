@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from '@/views/Home.vue';
+import Login from '@/views/home/Login.vue';
 import Dashboard from '@/views/Dashboard.vue';
 
 const About = () => import(/* webpackChunkName: 'about' */ '@/views/About.vue');
@@ -26,9 +27,30 @@ const routes = [
     component: About,
   },
   {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+    beforeEnter(to, from, next) {
+      const loggedIn = localStorage.getItem('username');
+      if (loggedIn) {
+        next({ name: '' });
+      } else {
+        next();
+      }
+    },
+  },
+  {
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard,
+    beforeEnter(to, from, next) {
+      const loggedIn = localStorage.getItem('username');
+      if (!loggedIn) {
+        next({ name: 'Login' });
+      } else {
+        next();
+      }
+    },
     children: [
       {
         path: '',
