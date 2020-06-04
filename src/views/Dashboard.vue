@@ -1,7 +1,7 @@
 <template>
   <Authenticated page-sub-title="Dashboard">
     <ul>
-      <li><router-link to="#" class="link">Category 1</router-link></li>
+      <li><router-link to="#" class="link">Articles</router-link></li>
       <li><router-link to="#" class="link">Create New</router-link></li>
     </ul>
     <router-view />
