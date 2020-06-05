@@ -7,11 +7,11 @@ import Dashboard from '@/views/Dashboard.vue';
 
 const About = () => import(/* webpackChunkName: 'about' */ '@/views/About.vue');
 const Article = () =>
-  import(/* webpackChunkName: 'dashboard' */ '@/views/dashboard/Article.vue');
+  import(/* webpackChunkName: 'article' */ '@/views/dashboard/Article.vue');
 const Default = () =>
-  import(/* webpackChunkName: 'dashboard' */ '@/views/dashboard/Default.vue');
+  import(/* webpackChunkName: 'default' */ '@/views/dashboard/Default.vue');
 const Edit = () =>
-  import(/* webpackChunkName: 'dashboard' */ '@/views/dashboard/Edit.vue');
+  import(/* webpackChunkName: 'edit' */ '@/views/dashboard/Edit.vue');
 
 Vue.use(VueRouter);
 
@@ -41,7 +41,6 @@ const routes = [
   },
   {
     path: '/dashboard',
-    name: 'Dashboard',
     component: Dashboard,
     beforeEnter(to, from, next) {
       const loggedIn = localStorage.getItem('username');

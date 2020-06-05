@@ -11,6 +11,7 @@
 
 <script>
 import Static from '@/layouts/Static';
+
 export default {
   name: 'Login',
   components: {

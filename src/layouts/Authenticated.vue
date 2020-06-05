@@ -37,6 +37,7 @@ export default {
   background-color: #ffffff;
   border-radius: 4px;
   box-shadow: 1px 1px grey;
+  overflow-y: auto;
 
   .header {
     background: black;
