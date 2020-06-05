@@ -1,5 +1,9 @@
 export default {
-  state: {},
+  state: {
+    name: '',
+    peferredLanguage: 'en',
+    isLoggedIn: false,
+  },
   mutations: {},
   actions: {},
   modules: {},

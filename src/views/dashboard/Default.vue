@@ -3,45 +3,35 @@
     <h3>List of Articles</h3>
     <ul>
       <li v-for="article in articles" :key="article.id">
-        {{ article.content }}
+        {{ article.title }}
       </li>
     </ul>
-    <h3>Random Article</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi scelerisque
-      ultricies consectetur. Maecenas mollis erat ac odio fermentum dapibus.
-      Mauris vitae pulvinar eros. Vivamus scelerisque tortor lectus, at suscipit
-      lorem pulvinar id. Nulla semper, dolor at ultrices posuere, risus ...
-    </p>
-    <router-link to="#">Show Full</router-link>
+    <div v-if="randomArticle">
+      <h3>Random Article</h3>
+      <p class="random-article">
+        {{ randomArticle.content }}
+      </p>
+      <router-link to="#">Show Full</router-link>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters, mapState } from 'vuex';
+
 export default {
   name: 'Default',
-  components: {},
-  data() {
-    return {
-      articles: [
-        {
-          id: 1,
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        },
-        {
-          id: 2,
-          content: 'Nullam mollis tellus in augue sollicitudin placerat.',
-        },
-        {
-          id: 3,
-          content: 'Donec tincidunt felis ut diam dapibus semper.',
-        },
-        {
-          id: 4,
-          content: 'Suspendisse nec diam ac metus ultrices commodo.',
-        },
-      ],
-    };
+  computed: {
+    ...mapState({
+      articles: state => state.articles.articles,
+    }),
+    ...mapGetters(['randomArticle']),
+  },
+  async created() {
+    await this.getArticles();
+  },
+  methods: {
+    ...mapActions(['getArticles']),
   },
 };
 </script>
@@ -60,5 +50,12 @@ a {
   display: inline-block;
   margin-top: 20px;
   cursor: pointer;
+}
+
+.random-article {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 </style>
