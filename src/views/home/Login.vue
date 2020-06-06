@@ -3,7 +3,7 @@
     <div class="login">
       <label>Enter your Username</label>
       <input type="text" v-model="username" />
-      <p><a href="#" class="link" @click.prevent="login">Login</a></p>
+      <p><a href="#" class="link" @click.prevent="submit">Login</a></p>
       <p v-if="signing">Signing you in ...</p>
     </div>
   </Static>
@@ -11,6 +11,7 @@
 
 <script>
 import Static from '@/layouts/Static';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'Login',
@@ -24,7 +25,8 @@ export default {
     };
   },
   methods: {
-    login() {
+    ...mapActions(['login']),
+    async submit() {
       if (!this.username) {
         alert('Username is required!');
         return;
@@ -32,13 +34,11 @@ export default {
 
       this.signing = true;
 
-      setTimeout(() => {
-        localStorage.setItem('username', this.username);
+      await this.login(this.username);
 
-        this.signing = false;
+      this.signing = false;
 
-        this.$router.push({ path: '/dashboard' });
-      }, 1000);
+      this.$router.push({ path: '/dashboard' });
     },
   },
 };

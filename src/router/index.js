@@ -33,7 +33,7 @@ const routes = [
     beforeEnter(to, from, next) {
       const loggedIn = localStorage.getItem('username');
       if (loggedIn) {
-        next({ name: '' });
+        next({ path: '/' });
       } else {
         next();
       }
@@ -45,7 +45,7 @@ const routes = [
     beforeEnter(to, from, next) {
       const loggedIn = localStorage.getItem('username');
       if (!loggedIn) {
-        next({ name: 'Login' });
+        next({ path: '/login' });
       } else {
         next();
       }
