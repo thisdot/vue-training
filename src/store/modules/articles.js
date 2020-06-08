@@ -8,6 +8,8 @@ export default {
     archivedArticles: [],
   },
   getters: {
+    getArticle: state => id =>
+      state.articles.find(article => article.id === id),
     randomArticle: state => state.articles[getRandomArticleId()],
   },
   mutations: {
@@ -23,5 +25,4 @@ export default {
       }, 500);
     },
   },
-  modules: {},
 };
