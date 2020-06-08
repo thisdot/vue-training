@@ -1,6 +1,6 @@
 import articles from './../../assets/articles';
 
-const getRandomArticleId = () => Math.floor(Math.random() * 20) + 1;
+const getRandomArticleId = () => Math.floor(Math.random() * 10) + 1;
 
 export default {
   state: {
