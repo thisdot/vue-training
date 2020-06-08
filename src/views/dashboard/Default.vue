@@ -8,7 +8,7 @@
         placeholder="Type to filter articles "
       />
     </div>
-    <ol class="default__articles">
+    <ol v-if="filteredArticles.length > 0" class="default__articles">
       <li
         class="default__article"
         v-for="article in filteredArticles"
@@ -22,6 +22,9 @@
         <p class="default__article-content">{{ getArticleDetails(article) }}</p>
       </li>
     </ol>
+    <p v-else class="default__no-data">
+      No data matching your filter!
+    </p>
     <div v-if="randomArticle">
       <h3>Random Article</h3>
       <p class="default__article-random-title">{{ randomArticle.title }}</p>
@@ -83,6 +86,15 @@ export default {
       outline: none;
       font-size: 1rem;
     }
+  }
+
+  &__no-data {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    line-height: 2rem;
+    font-size: 1rem;
+    padding: 25px 0;
   }
 
   &__articles {
