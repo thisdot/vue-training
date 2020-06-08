@@ -31,8 +31,8 @@ export default {
   },
   methods: {
     ...mapActions(['archiveArticle']),
-    archive() {
-      return null;
+    async archive() {
+      this.archiveArticle(this.$route.params.article_id);
     },
   },
 };
