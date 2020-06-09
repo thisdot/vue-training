@@ -1,6 +1,6 @@
 import articles from './../../assets/articles';
 
-const getRandomArticleId = () => Math.floor(Math.random() * 10) + 1;
+const getRandomArticleId = length => Math.floor(Math.random() * length) + 1;
 
 export default {
   state: {
@@ -10,7 +10,8 @@ export default {
   getters: {
     getArticle: state => id =>
       state.articles.find(article => article.id === id),
-    randomArticle: state => state.articles[getRandomArticleId()],
+    randomArticle: state =>
+      state.articles[getRandomArticleId(state.articles.length)],
   },
   mutations: {
     SET_ARTICLES(state, articles) {

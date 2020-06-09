@@ -11,10 +11,17 @@
 <script>
 // @ is an alias to /src
 import Authenticated from '@/layouts/Authenticated';
+import { mapActions } from 'vuex';
 
 export default {
   nam: 'Dashboard',
   components: { Authenticated },
+  async created() {
+    await this.getArticles();
+  },
+  methods: {
+    ...mapActions(['getArticles']),
+  },
 };
 </script>
 
