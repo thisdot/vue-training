@@ -1,7 +1,7 @@
 <template>
   <Authenticated page-sub-title="Dashboard">
     <ul>
-      <li><router-link to="#" class="link">Articles</router-link></li>
+      <li><router-link to="/dashboard" class="link">Articles</router-link></li>
       <li><router-link to="#" class="link">Create New</router-link></li>
     </ul>
     <router-view />
@@ -11,10 +11,17 @@
 <script>
 // @ is an alias to /src
 import Authenticated from '@/layouts/Authenticated';
+import { mapActions } from 'vuex';
 
 export default {
   nam: 'Dashboard',
   components: { Authenticated },
+  async created() {
+    await this.getArticles();
+  },
+  methods: {
+    ...mapActions(['getArticles']),
+  },
 };
 </script>
 

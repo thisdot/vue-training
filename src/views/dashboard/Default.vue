@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 
 export default {
   name: 'Default',
@@ -58,11 +58,7 @@ export default {
     },
     ...mapGetters(['randomArticle']),
   },
-  async created() {
-    await this.getArticles();
-  },
   methods: {
-    ...mapActions(['getArticles']),
     getArticleDetails(article) {
       if (!article) return;
 
