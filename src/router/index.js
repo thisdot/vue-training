@@ -5,6 +5,10 @@ import Home from '@/views/Home.vue';
 import Login from '@/views/home/Login.vue';
 import Dashboard from '@/views/Dashboard.vue';
 
+
+import ExerciseOne from '@/views/ExerciseOne.vue';
+import ExerciseTwo from '@/views/ExerciseTwo.vue';
+
 const About = () => import(/* webpackChunkName: 'about' */ '@/views/About.vue');
 const Article = () =>
   import(/* webpackChunkName: 'article' */ '@/views/dashboard/Article.vue');
@@ -67,6 +71,14 @@ const routes = [
         component: Edit,
       },
     ],
+  },
+  {
+    path: '/exercise/1',
+    component: ExerciseOne,
+  },
+  {
+    path: '/exercise/2',
+    component: ExerciseTwo,
   },
 ];
 
