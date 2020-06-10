@@ -1,20 +1,28 @@
 export default {
   data() {
     return {
-      logColour: '#34FF00',
-      logBackground: '#00Ff11',
+      logColour: {
+        type: String,
+        required: false,
+        default: '#34FF00',
+      },
+      logBackground: {
+        type: String,
+        required: false,
+        default: '#00Ff11',
+      },
     };
   },
   mounted() {
     console.log(
-      'Inside mounted(): %s Oh my heavens!',
-      `background: ${this.logBackground}; color: ${this.logColour}`,
+      'Inside mounted(): %c Oh my heavens! ',
+      'background: this.logColour; color: this.logBackground',
     );
   },
   updated() {
     console.log(
-      'Inside updated(): %s Oh my heavens!',
-      `background: ${this.logBackground}; color: ${this.logColour}`,
+      'Inside updated(): %c Oh my heavens! ',
+      'background: this.logColour; color: this.logBackground',
     );
   },
   methods: {
