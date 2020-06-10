@@ -14,12 +14,17 @@
 // @ is an alias to /src
 import Static from '@/layouts/Static';
 import { mapGetters } from 'vuex';
+import LogMixin from '@/mixins/Log.mixin';
 
 export default {
   name: 'Home',
+  mixins: [LogMixin],
   components: { Static },
   computed: {
     ...mapGetters(['isLoggedIn']),
+  },
+  created() {
+    this.log('Logging from inside Home View');
   },
 };
 </script>
