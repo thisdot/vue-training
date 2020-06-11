@@ -1,5 +1,8 @@
 <template>
   <Static title="Home">
+    <BaseButton>
+      Click Me
+    </BaseButton>
     <div v-if="!isLoggedIn">
       <p>Please login</p>
       <router-link to="/login">Login</router-link>
@@ -16,11 +19,12 @@
 import Static from '@/components/1.layouts/Static';
 import { mapGetters } from 'vuex';
 import LogMixin from '@/mixins/Log.mixin';
+import BaseButton from '@/components/BaseButton';
 
 export default {
   name: 'Home',
   mixins: [LogMixin],
-  components: { Static },
+  components: { Static, BaseButton },
   computed: {
     ...mapGetters(['isLoggedIn']),
   },
