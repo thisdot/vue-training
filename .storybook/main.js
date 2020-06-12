@@ -4,6 +4,7 @@ module.exports = {
     addons: [
         '@storybook/addon-knobs/register',
         '@storybook/addon-notes/register',
+        '@storybook/addon-a11y/register',
     ],
     stories: ['../src/**/*.stories.js'],
     webpackFinal: async (config, { configType }) => {
