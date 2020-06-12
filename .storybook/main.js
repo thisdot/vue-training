@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-    addons: ['@storybook/addon-knobs/register'],
+    addons: [
+        '@storybook/addon-knobs/register',
+        '@storybook/addon-notes/register',
+    ],
     stories: ['../src/**/*.stories.js'],
     webpackFinal: async (config, { configType }) => {
         // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
