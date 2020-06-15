@@ -3,6 +3,7 @@
 <script>
 // #Exercise 3
 // Summary: This exercise is aimed at introducing you to vue router and its settings
+// Story: As an user of the website, I would like to have a joke route that will be used to load my jokes list and individual jokes.
 
 // This component will feature:
 // - basic vue router
@@ -14,9 +15,10 @@
 //Steps
 // - Create a Route for "/jokes"
 // - add a default child component to load "ExerciseTwo"
-// - add another route "/jokes/{jokeId}" to load "individual Joke"
+// - use this component to be the "layout" of the jokes route
+// - add another route "/jokes/{jokeId}" to load "/jokes/individualJoke.vue"
 // - make this two component part of the same webpack chunk
-// - Change Individual Joke to load a the provided Joke Id
+// - Change Individual Joke to load the provided Joke Id
 // - Add a button to "individual Joke", to go to the "jokes" view
 // - Create A new route "/firstJoke" that redirect to "jokes/1"
 
