@@ -27,11 +27,6 @@ export default {
   },
   computed: {
     articleExtract() {
-      return this.getArticleExtract();
-    },
-  },
-  methods: {
-    getArticleExtract() {
       return `${this.content.substring(0, 300)} ...`;
     },
   },
