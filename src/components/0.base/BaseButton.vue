@@ -1,12 +1,5 @@
 <template>
-  <button
-    class="base-button"
-    @click="onClick"
-    :style="{
-      backgroundColor: colorStyles.backgroundColor,
-      color: colorStyles.color,
-    }"
-  >
+  <button class="base-button" @click="onClick" :style="colorStyles">
     <slot />
   </button>
 </template>
@@ -26,7 +19,7 @@ export default {
   },
   computed: {
     colorStyles() {
-      let objColor = { backgroundColor: '', color: '' };
+      let objColor = { backgroundColor: '', color: '', border: 'none' };
 
       if (this.primary) {
         objColor['backgroundColor'] = 'blue';
@@ -34,6 +27,7 @@ export default {
       } else if (this.secondary) {
         objColor['backgroundColor'] = 'white';
         objColor['color'] = 'blue';
+        objColor['border'] = '1px solid blue';
       } else {
         // default
         objColor['backgroundColor'] = 'blue';
@@ -59,7 +53,6 @@ export default {
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
-  /*background-color: #187bcd;*/
-  /*color: #fff;*/
+  outline: none;
 }
 </style>
