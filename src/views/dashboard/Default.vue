@@ -27,17 +27,25 @@
     </p>
     <div v-if="randomArticle">
       <h3>Random Article</h3>
-      <p class="default__article-random-title">{{ randomArticle.title }}</p>
-      <p class="default__article-random-content">{{ randomArticle.content }}</p>
+      <RandomArticle
+        class="default__random-article"
+        :article_id="randomArticle.id"
+        :title="randomArticle.title"
+        :content="randomArticle.content"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapState } from 'vuex';
+import RandomArticle from './RandomArticle';
 
 export default {
   name: 'Default',
+  components: {
+    RandomArticle,
+  },
   data() {
     return {
       filter: '',
@@ -101,19 +109,17 @@ export default {
     padding-top: 25px;
   }
 
-  &__article-title,
-  &__article-random-title {
+  &__article-title {
     text-transform: capitalize;
     font-weight: bold;
   }
 
-  &__article-random-title {
-    padding-top: 20px;
+  &__article-content {
+    padding-top: 10px;
   }
 
-  &__article-content,
-  &__article-random-content {
-    padding-top: 10px;
+  &__random-article {
+    padding-top: 20px;
   }
 }
 
