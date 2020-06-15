@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <div></div>
+</template>
 
 <script>
 // #Exercise 4
@@ -23,5 +25,4 @@
 // - Test a component with vuex integration
 </script>
 
-<style>
-</style>
+<style></style>

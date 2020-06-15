@@ -10,7 +10,7 @@
 
 <script>
 // @ is an alias to /src
-import Authenticated from '@/layouts/Authenticated';
+import Authenticated from '@/components/1.layouts/Authenticated';
 import { mapActions } from 'vuex';
 
 export default {

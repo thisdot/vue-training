@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <div></div>
+</template>
 
 <script>
 // #Exercise 3
@@ -27,5 +29,4 @@
 // - add logic in "individual Joke" to "redirect back" after 5 seconds of being on the component.
 </script>
 
-<style>
-</style>
+<style></style>

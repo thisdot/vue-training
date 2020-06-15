@@ -1,20 +1,27 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import Home from '@/views/Home.vue';
-import Login from '@/views/home/Login.vue';
-import Dashboard from '@/views/Dashboard.vue';
+import Home from '@/components/2.views/Home.vue';
+import Login from '@/components/2.views/Login.vue';
+import Dashboard from '@/components/2.views/Dashboard.vue';
 
-import ExerciseOne from '@/views/ExerciseOne.vue';
-import ExerciseTwo from '@/views/ExerciseTwo.vue';
+import ExerciseOne from '@/components/2.views/ExerciseOne.vue';
+import ExerciseTwo from '@/components/2.views/ExerciseTwo.vue';
 
-const About = () => import(/* webpackChunkName: 'about' */ '@/views/About.vue');
+const About = () =>
+  import(/* webpackChunkName: 'about' */ '@/components/2.views/About.vue');
 const Article = () =>
-  import(/* webpackChunkName: 'article' */ '@/views/dashboard/Article.vue');
+  import(
+    /* webpackChunkName: 'article' */ '@/components/3.sections/dashboard/Article.vue'
+  );
 const Default = () =>
-  import(/* webpackChunkName: 'default' */ '@/views/dashboard/Default.vue');
+  import(
+    /* webpackChunkName: 'default' */ '@/components/3.sections/dashboard/Default.vue'
+  );
 const Create = () =>
-  import(/* webpackChunkName: 'create' */ '@/views/dashboard/Create.vue');
+  import(
+    /* webpackChunkName: 'create' */ '@/components/3.sections/dashboard/Create.vue'
+  );
 
 Vue.use(VueRouter);
 
