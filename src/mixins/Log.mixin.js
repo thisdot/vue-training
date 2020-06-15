@@ -1,25 +1,22 @@
 export default {
   data() {
     return {
-      logColour: '#34FF00',
+      logColour: '#031a04',
       logBackground: '#00Ff11',
     };
   },
   mounted() {
-    console.log(
-      'Inside mounted(): %s Oh my heavens!',
-      `background: ${this.logBackground}; color: ${this.logColour}`,
-    );
+    this.log('mounted()', 'On my heavens!');
   },
   updated() {
-    console.log(
-      'Inside updated(): %s Oh my heavens!',
-      `background: ${this.logBackground}; color: ${this.logColour}`,
-    );
+    this.log('updated()', 'On my heavens!');
   },
   methods: {
-    log(message) {
-      console.log('Inside Mixin:', message);
+    log(source, message) {
+      console.log(
+        `%c Mixin: Inside ${source} - ${message}`,
+        `background: ${this.logBackground}; color: ${this.logColour}`,
+      );
     },
   },
 };
