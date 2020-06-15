@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <div></div>
+</template>
 
 <script>
 // #Exercise 4
@@ -26,5 +28,4 @@
 // - Change the values in the chrome/firefox debugger
 </script>
 
-<style>
-</style>
+<style></style>

@@ -1,16 +1,18 @@
 <template>
   <Static title="Login">
     <div class="login">
-      <label>Enter your Username</label>
-      <input type="text" v-model="username" />
-      <p><a href="#" class="link" @click.prevent="submit">Login</a></p>
+      <label for="username">Enter your Username</label>
+      <input type="text" id="username" v-model="username" />
+      <p>
+        <a href="#" class="link" @click.prevent="submit">Login</a>
+      </p>
       <p v-if="signing">Signing you in ...</p>
     </div>
   </Static>
 </template>
 
 <script>
-import Static from '@/layouts/Static';
+import Static from '@/components/1.layouts/Static';
 import { mapActions } from 'vuex';
 
 export default {

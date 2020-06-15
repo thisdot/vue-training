@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import Static from '@/layouts/Static';
+import Static from '@/components/1.layouts/Static';
 
 export default {
   name: 'About',

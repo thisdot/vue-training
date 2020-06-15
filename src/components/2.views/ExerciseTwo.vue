@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <div></div>
+</template>
 
 <script>
 // #Exercise 2
@@ -29,8 +31,7 @@
 // - log something (from the parent component) using the Mixins when the button is clicked in the child component
 // - change the colour of the log msg
 
-import { fetchJokes } from "@assets/jokes.js";
+// import { fetchJokes } from '@/assets/jokes.js';
 </script>
 
-<style>
-</style>
+<style></style>

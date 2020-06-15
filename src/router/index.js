@@ -1,21 +1,27 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import Home from '@/views/Home.vue';
-import Login from '@/views/home/Login.vue';
-import Dashboard from '@/views/Dashboard.vue';
+import Home from '@/components/2.views/Home.vue';
+import Login from '@/components/2.views/Login.vue';
+import Dashboard from '@/components/2.views/Dashboard.vue';
 
+import ExerciseOne from '@/components/2.views/ExerciseOne.vue';
+import ExerciseTwo from '@/components/2.views/ExerciseTwo.vue';
 
-import ExerciseOne from '@/views/ExerciseOne.vue';
-import ExerciseTwo from '@/views/ExerciseTwo.vue';
-
-const About = () => import(/* webpackChunkName: 'about' */ '@/views/About.vue');
+const About = () =>
+  import(/* webpackChunkName: 'about' */ '@/components/2.views/About.vue');
 const Article = () =>
-  import(/* webpackChunkName: 'article' */ '@/views/dashboard/Article.vue');
+  import(
+    /* webpackChunkName: 'article' */ '@/components/3.sections/dashboard/Article.vue'
+  );
 const Default = () =>
-  import(/* webpackChunkName: 'default' */ '@/views/dashboard/Default.vue');
-const Edit = () =>
-  import(/* webpackChunkName: 'edit' */ '@/views/dashboard/Edit.vue');
+  import(
+    /* webpackChunkName: 'default' */ '@/components/3.sections/dashboard/Default.vue'
+  );
+const Create = () =>
+  import(
+    /* webpackChunkName: 'create' */ '@/components/3.sections/dashboard/Create.vue'
+  );
 
 Vue.use(VueRouter);
 
@@ -35,7 +41,7 @@ const routes = [
     name: 'Login',
     component: Login,
     beforeEnter(to, from, next) {
-      const loggedIn = localStorage.getItem('username');
+      const loggedIn = localStorage.getItem('vue-training-username');
       if (loggedIn) {
         next({ path: '/' });
       } else {
@@ -47,7 +53,7 @@ const routes = [
     path: '/dashboard',
     component: Dashboard,
     beforeEnter(to, from, next) {
-      const loggedIn = localStorage.getItem('username');
+      const loggedIn = localStorage.getItem('vue-training-username');
       if (!loggedIn) {
         next({ path: '/login' });
       } else {
@@ -66,9 +72,9 @@ const routes = [
         component: Article,
       },
       {
-        path: 'edit',
-        name: 'Edit',
-        component: Edit,
+        path: 'create',
+        name: 'Create',
+        component: Create,
       },
     ],
   },

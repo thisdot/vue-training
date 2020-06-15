@@ -5,11 +5,11 @@
         <img
           class="authenticated__logo"
           src="https://placeholder.pics/svg/140x50"
-          alt=""
+          alt="vue training logo"
         />
       </a>
       <nav class="row authenticated__nav">
-        <router-link class="link link--light" to="/">Logout</router-link>
+        <a class="link link--light" @click="$emit('logout')">Logout</a>
       </nav>
     </div>
     <slot />
@@ -50,6 +50,10 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  a {
+    cursor: pointer;
   }
 }
 </style>
