@@ -5,7 +5,6 @@ import Home from '@/views/Home.vue';
 import Login from '@/views/home/Login.vue';
 import Dashboard from '@/views/Dashboard.vue';
 
-
 import ExerciseOne from '@/views/ExerciseOne.vue';
 import ExerciseTwo from '@/views/ExerciseTwo.vue';
 
@@ -14,8 +13,8 @@ const Article = () =>
   import(/* webpackChunkName: 'article' */ '@/views/dashboard/Article.vue');
 const Default = () =>
   import(/* webpackChunkName: 'default' */ '@/views/dashboard/Default.vue');
-const Edit = () =>
-  import(/* webpackChunkName: 'edit' */ '@/views/dashboard/Edit.vue');
+const Create = () =>
+  import(/* webpackChunkName: 'create' */ '@/views/dashboard/Create.vue');
 
 Vue.use(VueRouter);
 
@@ -35,7 +34,7 @@ const routes = [
     name: 'Login',
     component: Login,
     beforeEnter(to, from, next) {
-      const loggedIn = localStorage.getItem('username');
+      const loggedIn = localStorage.getItem('vue-training-username');
       if (loggedIn) {
         next({ path: '/' });
       } else {
@@ -47,7 +46,7 @@ const routes = [
     path: '/dashboard',
     component: Dashboard,
     beforeEnter(to, from, next) {
-      const loggedIn = localStorage.getItem('username');
+      const loggedIn = localStorage.getItem('vue-training-username');
       if (!loggedIn) {
         next({ path: '/login' });
       } else {
@@ -66,9 +65,9 @@ const routes = [
         component: Article,
       },
       {
-        path: 'edit',
-        name: 'Edit',
-        component: Edit,
+        path: 'create',
+        name: 'Create',
+        component: Create,
       },
     ],
   },

@@ -22,9 +22,7 @@
         <p class="default__article-content">{{ getArticleDetails(article) }}</p>
       </li>
     </ol>
-    <p v-else class="default__no-data">
-      No data matching your filter!
-    </p>
+    <p v-else class="default__no-data">No data matching your filter!</p>
     <div v-if="randomArticle">
       <h3>Random Article</h3>
       <p class="default__article-random-title">{{ randomArticle.title }}</p>

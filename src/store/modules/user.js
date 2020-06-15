@@ -1,6 +1,6 @@
 export default {
   state: {
-    username: localStorage.getItem('username') || '',
+    username: localStorage.getItem('vue-training-username') || '',
     peferredLanguage: 'en',
   },
   getters: {
@@ -8,20 +8,24 @@ export default {
   },
   mutations: {
     SET_NAME(state, username) {
-      state.name = username;
+      state.username = username;
     },
   },
   actions: {
     login({ commit }, username) {
       return new Promise(resolve => {
         setTimeout(() => {
-          localStorage.setItem('username', username);
+          localStorage.setItem('vue-training-username', username);
 
           commit('SET_NAME', username);
 
           resolve();
         }, 500);
       });
+    },
+    async logout({ commit }) {
+      localStorage.removeItem('vue-training-username');
+      commit('SET_NAME', '');
     },
   },
 };

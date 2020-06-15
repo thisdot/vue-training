@@ -1,9 +1,9 @@
 <template>
-  <Authenticated page-sub-title="Dashboard">
-    <ul>
-      <li><router-link to="/dashboard" class="link">Articles</router-link></li>
-      <li><router-link to="#" class="link">Create New</router-link></li>
-    </ul>
+  <Authenticated page-sub-title="Dashboard" @logout="handleLogout">
+    <nav>
+      <router-link to="/dashboard" class="link">Articles</router-link>
+      <router-link to="/dashboard/create" class="link">Create New</router-link>
+    </nav>
     <router-view />
   </Authenticated>
 </template>
@@ -20,18 +20,17 @@ export default {
     await this.getArticles();
   },
   methods: {
-    ...mapActions(['getArticles']),
+    ...mapActions(['getArticles', 'logout']),
+    async handleLogout() {
+      await this.logout();
+      this.$router.push('/');
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-ul {
-  display: block;
-  list-style: none;
-}
-
-li {
+a {
   display: inline-block;
   margin-right: 20px;
 

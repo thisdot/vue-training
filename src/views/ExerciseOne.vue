@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <div></div>
+</template>
 
 <script>
 // #Exercise 1
@@ -24,8 +26,7 @@
 // - Create a computed property to "generate" the button text
 // - Apply the above computed properties to the button
 
-import { fetchJoke } from "@assets/jokes.js";
+//'@/assets/jokes.js'e } from "@/assets/jokes.js";
 </script>
 
-<style>
-</style>
+<style></style>
