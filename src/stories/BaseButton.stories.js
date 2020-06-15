@@ -1,6 +1,6 @@
 import { withKnobs, text } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
-import BaseButton from '../components/BaseButton';
+import BaseButton from '../components/0.base/BaseButton';
 
 export default {
   title: 'Base Button',

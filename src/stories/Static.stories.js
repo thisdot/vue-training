@@ -1,5 +1,5 @@
 import { withKnobs, text } from '@storybook/addon-knobs';
-import Static from '../layouts/Static';
+import Static from '../components/1.layouts/Static';
 
 export default {
   title: 'Static Layout',
