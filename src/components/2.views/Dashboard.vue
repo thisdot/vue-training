@@ -29,14 +29,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-a {
-  display: inline-block;
-  margin-right: 20px;
-
-  border: 1px solid $primary;
-  border-radius: 5px;
-  padding: 10px;
-  text-decoration: none;
-}
-</style>
+<style lang="scss" scoped></style>

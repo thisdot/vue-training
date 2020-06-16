@@ -1,13 +1,15 @@
 <template>
   <Static title="Home">
-    <BaseButton>Click Me</BaseButton>
     <div v-if="!isLoggedIn">
       <p>Please login</p>
-      <router-link to="/login">Login</router-link>
-      <router-link to="/about" class="link">About</router-link>
+      <nav>
+        <router-link to="/login">Login</router-link>
+        <router-link to="/about" class="link">About</router-link>
+      </nav>
     </div>
     <div v-else>
       <p>Welcome</p>
+      <router-link to="/dashboard" class="link">Go to Dashboard</router-link>
     </div>
   </Static>
 </template>
@@ -17,12 +19,11 @@
 import Static from '@/components/1.layouts/Static';
 import { mapGetters } from 'vuex';
 import LogMixin from '@/mixins/Log.mixin';
-import BaseButton from '@/components/4.base/BaseButton';
 
 export default {
   name: 'Home',
   mixins: [LogMixin],
-  components: { Static, BaseButton },
+  components: { Static },
   computed: {
     ...mapGetters(['isLoggedIn']),
   },
