@@ -40,8 +40,8 @@ export default {
 
   &.secondary {
     background-color: white;
-    color: blue;
-    border: '1px solid blue';
+    color: lightgray;
+    border: 1px solid blue;
   }
 }
 </style>
