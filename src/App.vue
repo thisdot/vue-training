@@ -1,8 +1,16 @@
 <template>
-  <div id="app" class="default">Welcome to the training</div>
+  <div id="app" class="default">
+    <defaultDashboard />
+  </div>
 </template>
 
-<script></script>
+<script>
+import defaultDashboard from '@/components/Default';
+
+export default {
+  components: { defaultDashboard },
+};
+</script>
 
 <style lang="scss">
 body {
