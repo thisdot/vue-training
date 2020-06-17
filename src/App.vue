@@ -1,8 +1,27 @@
 <template>
   <div id="app">
-    <router-view />
+    <h2>Select a page</h2>
+    <button @click="currentPage = 'Dashboard'">Dashboard</button>
+    <button @click="currentPage = 'About'">About</button>
+    <component :is="currentPage" />
   </div>
 </template>
+
+<script>
+import Dashboard from '@/components/2.views/Dashboard';
+import About from '@/components/2.views/About';
+export default {
+  components: {
+    Dashboard,
+    About,
+  },
+  data() {
+    return {
+      currentPage: 'Dashboard',
+    };
+  },
+};
+</script>
 
 <style lang="scss">
 body {
