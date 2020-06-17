@@ -1,23 +1,30 @@
 <template>
   <article v-if="joke" class="exerciseOne">
-    <h2>Special view that displayes a single joke</h2>
-    <br />
-    <h3>{{ joke.story }}</h3>
-    <p class="punchLine">{{ joke.punchLine }}</p>
+    <h1>{{ joke.story }}</h1>
+    <p v-show="showPunchLine" class="punchLine">{{ joke.punchLine }}</p>
+    <button @click="showPunchLine = !showPunchLine">{{ buttonText }}</button>
   </article>
 </template>
 
 <script>
-// import { fetchJoke } from "@/assets/jokes.js";
+// #Exercise 1
+import { fetchFirstJoke } from '@/assets/jokes.js';
 
 export default {
   name: 'ExerciseOne',
   data() {
     return {
-      joke: null,
+      joke: fetchFirstJoke,
+      showPunchLine: false,
     };
   },
-  mounted() {},
+  computed: {
+    buttonText() {
+      return this.showPunchLine
+        ? 'what a bad joke, hide it please'
+        : 'Show Punchline';
+    },
+  },
 };
 </script>
 
@@ -25,7 +32,7 @@ export default {
 .exerciseOne {
   width: 500px;
   margin: 50px auto;
-  h2 {
+  h1 {
     font-size: 32px;
     color: Black;
   }
