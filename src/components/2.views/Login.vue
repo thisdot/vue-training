@@ -3,9 +3,7 @@
     <div class="login">
       <label for="username">Enter your Username</label>
       <input type="text" id="username" v-model="username" />
-      <p>
-        <a href="#" class="link" @click.prevent="submit">Login</a>
-      </p>
+      <a href="#" class="link" @click.prevent="submit">Login</a>
       <p v-if="signing">Signing you in ...</p>
     </div>
   </Static>
@@ -63,13 +61,8 @@ export default {
   }
 
   a {
-    display: inline-block;
-    margin: 20px auto;
-    border: 1px solid $primary;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    text-decoration: none;
+    display: block;
+    margin-top: 24px;
   }
 }
 </style>
