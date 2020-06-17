@@ -1,6 +1,6 @@
 # vue-training
 
-## Project setup
+## Project setup and run
 ```
 npm install
 ```
@@ -23,6 +23,11 @@ npm run test:unit
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+### Storybook
+```
+npm run storybook
 ```
 
 ### Customize configuration
