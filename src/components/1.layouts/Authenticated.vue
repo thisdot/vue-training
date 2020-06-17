@@ -8,9 +8,6 @@
           alt="vue training logo"
         />
       </a>
-      <nav class="row authenticated__nav">
-        <a class="link link--light" @click="$emit('logout')">Logout</a>
-      </nav>
     </div>
     <slot />
   </div>

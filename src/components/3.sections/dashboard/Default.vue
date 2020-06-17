@@ -36,8 +36,8 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
 import RandomArticle from '../../4.base/dashboard.randomArticle';
+import getArticles from '@/assets/articles.js';
 
 export default {
   name: 'Default',
@@ -47,12 +47,10 @@ export default {
   data() {
     return {
       filter: '',
+      articles: [],
     };
   },
   computed: {
-    ...mapState({
-      articles: state => state.articles.articles,
-    }),
     filteredArticles() {
       return this.articles.filter(article => {
         const content = article.content.toLowerCase();
@@ -62,7 +60,11 @@ export default {
         return content.includes(filter) || title.includes(filter);
       });
     },
-    ...mapGetters(['randomArticle']),
+    randomArticle() {
+      if (this.articles.length === 0) return;
+      const randomArticleId = this.getRandomArticleId(this.articles.length);
+      return this.articles.find(article => article.id === randomArticleId);
+    },
   },
   methods: {
     getArticleDetails(article) {
@@ -70,6 +72,12 @@ export default {
 
       return `${article.content.substring(0, 160)} ...`;
     },
+    getRandomArticleId(length) {
+      return Math.floor(Math.random() * length) + 1;
+    },
+  },
+  async created() {
+    this.articles = await getArticles();
   },
 };
 </script>

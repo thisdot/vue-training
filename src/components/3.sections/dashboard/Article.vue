@@ -1,13 +1,12 @@
 <template>
   <div class="Article">
     <h3>{{ title }}</h3>
-    <button @click.prevent="archive">Archive Article</button>
     <p>{{ content }}</p>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import getArticles from '@/assets/articles.js';
 
 export default {
   name: 'Article',
@@ -24,17 +23,13 @@ export default {
       return this.article && this.article.content;
     },
   },
-  created() {
-    this.article = this.$store.getters.getArticle(
-      this.$route.params.article_id,
+  async created() {
+    const articles = await getArticles();
+    this.article = articles.find(
+      article => article.id === this.$route.params.article_id,
     );
   },
-  methods: {
-    ...mapActions(['archiveArticle']),
-    async archive() {
-      this.archiveArticle(this.$route.params.article_id);
-    },
-  },
+  methods: {},
 };
 </script>
 
