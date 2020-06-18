@@ -34,14 +34,6 @@ const routes = [
   {
     path: '/dashboard',
     component: Dashboard,
-    beforeEnter(to, from, next) {
-      const loggedIn = localStorage.getItem('vue-training-username');
-      if (!loggedIn) {
-        next({ path: '/login' });
-      } else {
-        next();
-      }
-    },
     children: [
       {
         path: '',
