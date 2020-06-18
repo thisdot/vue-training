@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :style="{ direction: currentDirection }">
     <router-view />
   </div>
 </template>

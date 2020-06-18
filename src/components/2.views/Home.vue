@@ -1,16 +1,18 @@
 <template>
   <Static title="Home">
     <div v-if="!isLoggedIn">
-      <p>Please login</p>
+      <p>{{ $t('welcome') }}</p>
       <nav>
         <router-link to="/login">Login</router-link>
-        <router-link to="/about" class="link">About</router-link>
+        <router-link to="/about" class="link">{{ $t('about') }}</router-link>
       </nav>
     </div>
     <div v-else>
       <p>Welcome</p>
       <router-link to="/dashboard" class="link">Go to Dashboard</router-link>
     </div>
+    <button @click="$root.locale = 'en'">change To english</button>
+    <button @click="$root.locale = 'it'">change To italian</button>
   </Static>
 </template>
 
