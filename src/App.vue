@@ -1,8 +1,19 @@
 <template>
   <div id="app">
+    <ariaButton>
+      <button id="ciao">ciao</button>
+    </ariaButton>
     <router-view />
   </div>
 </template>
+<script>
+import ariaButton from '@/components/5.Renderers/aria-button.js';
+export default {
+  components: {
+    ariaButton,
+  },
+};
+</script>
 
 <style lang="scss">
 body {
