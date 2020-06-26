@@ -2,13 +2,15 @@
   "name": "vue-training",
   "version": "0.1.0",
   "private": true,
+  "main": "./dist/vueTrainingLibrary.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "storybook": "start-storybook",
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions",
+    "library": "vue-cli-service build --target lib --inline-vue --name vueTrainingLibrary src/library.js"
   },
   "dependencies": {
     "core-js": "^3.6.4",
