@@ -5,9 +5,6 @@ import Home from '@/components/2.views/Home.vue';
 import Login from '@/components/2.views/Login.vue';
 import Dashboard from '@/components/2.views/Dashboard.vue';
 
-import ExerciseOne from '@/components/2.views/ExerciseOne.vue';
-import ExerciseTwo from '@/components/2.views/ExerciseTwo.vue';
-
 const About = () =>
   import(/* webpackChunkName: 'about' */ '@/components/2.views/About.vue');
 const Article = () =>
@@ -77,14 +74,6 @@ const routes = [
         component: Create,
       },
     ],
-  },
-  {
-    path: '/exercise/1',
-    component: ExerciseOne,
-  },
-  {
-    path: '/exercise/2',
-    component: ExerciseTwo,
   },
 ];
 
