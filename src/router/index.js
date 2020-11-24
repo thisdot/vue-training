@@ -1,4 +1,4 @@
-import VueRouter from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 import Home from '@/components/2.views/Home.vue';
 import Login from '@/components/2.views/Login.vue';
@@ -74,11 +74,10 @@ const routes = [
   },
 ];
 
-const router = new VueRouter({
+export default createRouter({
+  history: createWebHashHistory(),
   routes,
   scrollBehavior() {
     return { y: 0 };
   },
 });
-
-export default router;
