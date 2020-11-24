@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from '@/components/2.views/Home.vue';
@@ -19,8 +18,6 @@ const Create = () =>
   import(
     /* webpackChunkName: 'create' */ '@/components/3.sections/dashboard/Create.vue'
   );
-
-Vue.use(VueRouter);
 
 const routes = [
   {
