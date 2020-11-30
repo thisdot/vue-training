@@ -9,18 +9,18 @@
       />
     </div>
     <ol v-if="filteredArticles.length > 0" class="default__articles">
-      <li
-        class="default__article"
-        v-for="article in filteredArticles"
-        :key="article.id"
-      >
-        <router-link
-          :to="{ name: 'Article', params: { article_id: article.id } }"
-          class="default__article-title"
-          >{{ article.title }}</router-link
-        >
-        <p class="default__article-content">{{ getArticleDetails(article) }}</p>
-      </li>
+      <template v-for="article in filteredArticles">
+        <li class="default__article" :key="article.id">
+          <router-link
+            :to="{ name: 'Article', params: { article_id: article.id } }"
+            class="default__article-title"
+            >{{ article.title }}</router-link
+          >
+          <p class="default__article-content">
+            {{ getArticleDetails(article) }}
+          </p>
+        </li>
+      </template>
     </ol>
     <p v-else class="default__no-data">No data matching your filter!</p>
     <div v-if="randomArticle">

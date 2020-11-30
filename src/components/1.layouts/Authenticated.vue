@@ -30,6 +30,7 @@ export default {
 
 <style lang="scss">
 #layout2 {
+  position: relative;
   max-width: 800px;
   min-height: 500px;
   padding: 24px;

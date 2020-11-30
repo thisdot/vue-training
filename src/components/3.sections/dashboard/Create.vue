@@ -1,16 +1,26 @@
 <template>
   <div class="create">
     <h3>Create an Article</h3>
-    <label for="title">Title</label>
-    <input type="text" id="title" v-model="article.title" />
-    <label for="content">Content</label>
-    <input type="text" id="content" v-model="article.content" />
+    <BaseInput
+      id="title"
+      :modelValue.sync="article.title"
+      label="Title:"
+      type="text"
+      role="textbox"
+      className="bold"
+    />
+    <BaseInput
+      id="content"
+      :modelValue.sync="article.content"
+      label="Content:"
+    />
     <button @click="submit">Create & Redirect</button>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
+import BaseInput from '@/components/4.base/BaseInput';
 
 export default {
   name: 'Create',
@@ -22,7 +32,9 @@ export default {
       },
     };
   },
-  components: {},
+  components: {
+    BaseInput,
+  },
   methods: {
     ...mapActions(['addArticle']),
     submit() {

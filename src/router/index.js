@@ -79,6 +79,9 @@ const routes = [
 
 const router = new VueRouter({
   routes,
+  scrollBehavior() {
+    return { y: 0 };
+  },
 });
 
 export default router;
