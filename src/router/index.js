@@ -78,6 +78,6 @@ export default createRouter({
   history: createWebHashHistory(),
   routes,
   scrollBehavior() {
-    return { y: 0 };
+    return { top: 0 };
   },
 });
