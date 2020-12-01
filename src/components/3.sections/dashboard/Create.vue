@@ -3,18 +3,20 @@
     <h3>Create an Article</h3>
     <BaseInput
       id="title"
-      :modelValue.sync="article.title"
+      v-model:modelValue="article.title"
       label="Title:"
       type="text"
       role="textbox"
-      className="bold"
+      class-name="bold"
     />
     <BaseInput
       id="content"
-      :modelValue.sync="article.content"
+      v-model:modelValue="article.content"
       label="Content:"
     />
-    <button @click="submit">Create & Redirect</button>
+    <button @click="submit">
+      Create & Redirect
+    </button>
   </div>
 </template>
 
@@ -24,6 +26,9 @@ import BaseInput from '@/components/4.base/BaseInput';
 
 export default {
   name: 'Create',
+  components: {
+    BaseInput,
+  },
   data() {
     return {
       article: {
@@ -31,9 +36,6 @@ export default {
         content: '',
       },
     };
-  },
-  components: {
-    BaseInput,
   },
   methods: {
     ...mapActions(['addArticle']),
