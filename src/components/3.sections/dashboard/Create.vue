@@ -7,7 +7,7 @@
       label="Title:"
       type="text"
       role="textbox"
-      class-name="bold"
+      class="bold"
     />
     <BaseInput
       id="content"

@@ -1,17 +1,18 @@
 <template>
-  <label :for="id">{{ label }}</label>
-  <input
-    :id="id"
-    :class="className"
-    v-bind="$attrs"
-    :value="modelValue"
-    @input="$emit('update:modelValue', $event.target.value)"
-  />
+  <div>
+    <label :for="$attrs.id">{{ label }}</label>
+    <input
+      v-bind="$attrs"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+    />
+  </div>
 </template>
 
 <script>
 export default {
   name: 'BaseInput',
+  inheritAttrs: false,
   props: {
     modelValue: {
       type: String,
@@ -20,15 +21,6 @@ export default {
     label: {
       type: String,
       required: true,
-    },
-    id: {
-      type: String,
-      required: true,
-    },
-    className: {
-      type: String,
-      required: false,
-      default: '',
     },
   },
   emits: ['update:modelValue'],
