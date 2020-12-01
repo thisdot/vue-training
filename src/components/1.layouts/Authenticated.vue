@@ -9,7 +9,8 @@
         />
       </a>
       <nav class="row authenticated__nav">
-        <a class="link link--light" @click="$emit('logout')">Logout</a>
+        <a class="link link--light"
+@click="$emit('logout', true)">Logout</a>
       </nav>
     </div>
     <slot />
@@ -24,6 +25,9 @@ export default {
       type: String,
       default: 'Default',
     },
+  },
+  emits: {
+    logout: value => 'boolean' === typeof value,
   },
 };
 </script>
