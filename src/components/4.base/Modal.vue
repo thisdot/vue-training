@@ -1,10 +1,11 @@
 <template>
-  <span>
-    <a @click="modalOpen = true" class="link">
-      Open full screen modal!
-    </a>
+  <a class="link" @click="modalOpen = true">
+    Open full screen modal!
+  </a>
 
-    <div v-if="modalOpen" class="modal">
+  <teleport to="body">
+    <div v-if="modalOpen"
+class="modal">
       <div>
         I'm a modal!
         <button @click="modalOpen = false">
@@ -12,12 +13,12 @@
         </button>
       </div>
     </div>
-  </span>
+  </teleport>
 </template>
 
 <script>
 export default {
-  name: 'modal-button',
+  name: 'ModalButton',
   data() {
     return {
       modalOpen: false,
