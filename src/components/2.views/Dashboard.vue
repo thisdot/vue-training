@@ -1,21 +1,35 @@
 <template>
-  <Authenticated page-sub-title="Dashboard" @logout="handleLogout">
+  <Authenticated page-sub-title="Dashboard"
+@logout="handleLogout">
     <nav>
-      <router-link to="/dashboard" class="link">Articles</router-link>
-      <router-link to="/dashboard/create" class="link">Create New</router-link>
-      <router-link to="/fake/path" class="link">Fake path</router-link>
+      <router-link
+to="/dashboard" class="link">
+        Articles
+      </router-link>
+      <router-link
+to="/dashboard/create" class="link">
+        Create New
+      </router-link>
+      <router-link
+to="/fake/path" class="link">
+        Fake path
+      </router-link>
       <router-link
         :disabled="linkDisabled"
         :event="!linkDisabled ? 'click' : ''"
         to="/link"
         class="link"
-        >Disabled Link</router-link
       >
-      <modal-button></modal-button>
+        Disabled Link
+      </router-link>
+      <modal-button />
     </nav>
-    <transition name="page" mode="out-in">
-      <router-view />
-    </transition>
+    <router-view v-slot="{ Component }">
+      <transition name="page"
+mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </Authenticated>
 </template>
 
