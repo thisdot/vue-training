@@ -3,14 +3,14 @@
     <h3>List of Articles</h3>
     <div class="default__filter">
       <input
-        type="text"
         v-model="filter"
+        type="text"
         placeholder="Type to filter articles "
       />
     </div>
     <ol v-if="filteredArticles.length > 0" class="default__articles">
-      <template v-for="article in filteredArticles">
-        <li class="default__article" :key="article.id">
+      <template v-for="article in filteredArticles" :key="article.id">
+        <li class="default__article">
           <router-link
             :to="{ name: 'Article', params: { article_id: article.id } }"
             class="default__article-title"
