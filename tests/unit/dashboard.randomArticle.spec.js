@@ -1,4 +1,4 @@
-import { RouterLinkStub, shallowMount } from '@vue/test-utils';
+import { RouterLinkStub, mount } from '@vue/test-utils';
 import Component from '@/components/4.base/dashboard.randomArticle.vue';
 
 describe('dashboard.randomArticle.vue', () => {
@@ -9,7 +9,7 @@ describe('dashboard.randomArticle.vue', () => {
       article_id: 0,
     };
 
-    const wrapper = shallowMount(Component, {
+    const wrapper = mount(Component, {
       propsData: props,
       stubs: { RouterLink: RouterLinkStub },
     });
@@ -26,7 +26,7 @@ describe('dashboard.randomArticle.vue', () => {
       article_id: 0,
     };
 
-    const wrapper = shallowMount(Component, {
+    const wrapper = mount(Component, {
       propsData: props,
       stubs: { RouterLink: RouterLinkStub },
     });
@@ -43,7 +43,7 @@ describe('dashboard.randomArticle.vue', () => {
       article_id: 0,
     };
 
-    const wrapper = shallowMount(Component, {
+    const wrapper = mount(Component, {
       propsData: props,
       stubs: { RouterLink: RouterLinkStub },
     });

@@ -1,8 +1,9 @@
 import Vuex from 'vuex';
-import { mount, createLocalVue } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
+import { createApp } from 'vue';
 import Component from '@/components/3.sections/dashboard/create.vue';
 
-const localVue = createLocalVue();
+const localVue = createApp();
 localVue.use(Vuex);
 
 describe('create.vue', () => {
